@@ -1,0 +1,16 @@
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 400px;
+    width: 400px;
+}
+
+.box{
+    border: 1px solid black;
+    cursor:pointer
+}
+.spillebrett{
+    display: flex;
+    padding: 1%;    
+    justify-content: space-evenly;
+}
