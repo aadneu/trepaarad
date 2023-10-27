@@ -43,7 +43,7 @@ function selectTeam(value) {
 function velgRute(clickedElement){
     if (clickedElement.innerHTML === ''){
         clickedElement.innerHTML = model.app.currentTeam
-    } 
+    }     
 }
 
 
