@@ -1,5 +1,3 @@
-
-
 function gridMaker(){
     let emptydiv = '';
     for (let i = 0; i < myArray.length; i++){
@@ -9,18 +7,34 @@ function gridMaker(){
     return emptydiv
 }
 
-
+function startGame(){
+    if(!model.app.hasChosenTeam){
+        model.app.displaymessage = 'Velg ett lag!'
+        } else { changeView("ingamescreen")
+    }
+    viewApp();
+}
 
 function resetGame(){
-    if(model.app.currentView = 'selectplayerscreen'){
+    changeView('selectplayerscreen')
     model.app.currentTeam = '';
-    model.app.currentScore = 0
-    }
-    return;
+    model.app.opposingTeam = '';
+    model.app.myScore = 0
+    model.app.opponentScore = 0
+    model.app.displaymessage = '';
+    model.app.hasChosenTeam = false
+    viewApp();    
 }
+
+
+
 
 function selectTeam(value){
     model.app.currentTeam = value
+ if(model.app.currentTeam != ''){
+    model.app.hasChosenTeam = true
+ }
+    
     viewApp();
 
 }

@@ -6,9 +6,9 @@ function viewApp(){
         <div>${pageView()}</div>
         <div>
             <div><h2>Team: ${model.app.currentTeam}</h2></div>
-            <div><h2>Score:</h2></div>
-            <div></div>
-            <div></div>
+            <div><h3>My score: ${model.app.myScore}</h3></div>
+            <div><h3>AI score: ${model.app.opponentScore}</h3></div>
+            <div>${model.app.opposingTeam}</div>
         </div>
     </div>
     
@@ -38,8 +38,9 @@ function selectPlayerScreen(){
     let html = /*html*/`
     <h2>Choose wisely</h2>
     <div>${listTeams()}</div>
-    <br><br><br>
-    <button onclick='changeView("ingamescreen")'>Start spill</button>
+    <br><br>
+    <div style='color: red; font-size: large'>${model.app.displaymessage}</div><br>
+    <button onclick='startGame()'>Start spill</button>
     `;
     return html;
 }
@@ -48,7 +49,7 @@ function gameView(){
     let html = /*html*/`
     <div class='grid'>${gridMaker()}</div>
     <br>
-    <button onclick='changeView("selectplayerscreen")'>Avslutt spill</button>
+    <button onclick='resetGame()'>Avslutt spill</button>
     `;
     return html
 }
@@ -56,5 +57,4 @@ function gameView(){
 function changeView(pagename){
     model.app.currentView = pagename
     viewApp();
-
 }

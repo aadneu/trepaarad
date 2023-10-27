@@ -12,8 +12,12 @@ model = {
         ],
         currentView: 'selectplayerscreen',
         currentTeam: '',
-        currentScore: 0,
-        teams:['Red','Blue']
+        opposingTeam: '',
+        myScore: 0,
+        opponentScore: 0,
+        teams:['Red','Blue'],
+        hasChosenTeam: false,
+        displaymessage: '',
     }
 }
 
