@@ -5,10 +5,10 @@ function viewApp(){
     <div class='spillebrett'>
         <div>${pageView()}</div>
         <div>
-            <div><h2>Team: ${model.app.currentTeam}</h2></div>
+            <div><h2>My team: ${model.app.currentTeam}</h2></div>
             <div><h3>My score: ${model.app.myScore}</h3></div>
             <div><h3>AI score: ${model.app.opponentScore}</h3></div>
-            <div>${model.app.opposingTeam}</div>
+            <div></div>
         </div>
     </div>
     
