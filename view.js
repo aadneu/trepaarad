@@ -40,7 +40,7 @@ function selectPlayerScreen(){
     <div>${listTeams()}</div>
     <br><br>
     <div style='color: red; font-size: large'>${model.app.displaymessage}</div><br>
-    <button onclick='startGame()'>Start spill</button>
+    <button onclick='startGame()'>Start game</button>
     `;
     return html;
 }
@@ -49,7 +49,7 @@ function gameView(){
     let html = /*html*/`
     <div class='grid'>${gridMaker()}</div>
     <br>
-    <button onclick='resetGame()'>Avslutt spill</button>
+    <button onclick='resetGame()'>Reset</button>
     `;
     return html
 }

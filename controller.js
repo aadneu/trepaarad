@@ -1,10 +1,3 @@
-function gridMaker() {
-  let emptydiv = "";
-  for (let i = 0; i < myArray.length; i++) {
-    emptydiv += `<div onclick='velgRute(this)' id='rute${myArray[i]}' class='box'></div>`;
-  }
-  return emptydiv;
-}
 
 function startGame() {
   if (!model.app.hasChosenTeam) {
@@ -33,24 +26,51 @@ function selectTeam(value) {
   }
   if(model.app.currentTeam === 'Red'){
     model.app.opposingTeam = 'Blue'
- } else if (model.app.currentTeam === 'Blue'){
+  } else if (model.app.currentTeam === 'Blue'){
     model.app.opposingTeam = 'Red'
- }
-
+  }
+  
   viewApp();
 }
-
-function velgRute(clickedElement){
-    if (clickedElement.innerHTML === ''){
-        clickedElement.innerHTML = model.app.currentTeam
-    }     
+function gridMaker() {
+  let grid = "";
+  for (let i = 0; i < model.app.gameBoard.length; i++) {
+    grid += `<div onclick='velgRute(${[i]})' class='box'>${model.app.gameBoard[i].rute}</div>`;
+  }
+  return grid;
 }
 
+function velgRute(index){
+  if(model.app.gameBoard[index].rute === '')   
+  model.app.gameBoard[index].rute = model.app.currentTeam;
+    viewApp();
+}
+
+function computerMove(){
+  let ledigrute = createRandomRute() 
+  if (ledigrute.style.backgroundColor){
+    computerMove()
+  } else {
+    ledigrute.style.backgroundColor = model.app.opposingTeam
+  }
+}
 
 function randomizer(){
    let randomNumber = Math.floor(Math.random() * (9 - 1 + 1 )) + 1
     return randomNumber;
 }
 
+function createRandomRute(){
+  let randomrute = document.getElementById(`rute${randomizer()}`)
+  return randomrute;
+}
 
+ 
+
+
+
+
+// function assignWinner(){
+//   if 
+// }
 

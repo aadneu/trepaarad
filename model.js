@@ -18,6 +18,17 @@ model = {
         teams:['Red','Blue'],
         hasChosenTeam: false,
         displaymessage: '',
+        gameBoard: [
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+            {rute: ''},
+    ]
     }
 }
 
