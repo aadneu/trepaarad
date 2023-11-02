@@ -9,14 +9,9 @@ function startGame() {
 }
 
 function resetGame() {
-  changeView("selectplayerscreen");
-  model.app.currentTeam = "";
-  model.app.opposingTeam = "";
-  model.app.myScore = 0;
-  model.app.opponentScore = 0;
-  model.app.displaymessage = "";
-  model.app.hasChosenTeam = false;
-  viewApp();
+location.reload()
+
+  
 }
 
 function selectTeam(value) {
@@ -43,15 +38,20 @@ function gridMaker() {
 function velgRute(index){
   if(model.app.gameBoard[index].rute === '')   
   model.app.gameBoard[index].rute = model.app.currentTeam;
-    viewApp();
+  computerMove()
+  viewApp();
 }
 
 function computerMove(){
-  let ledigrute = createRandomRute() 
-  if (ledigrute.style.backgroundColor){
-    computerMove()
+  let index = randomizer();
+  let ledigrute = model.app.gameBoard[index].rute
+  if (ledigrute === ''){
+    model.app.gameBoard[index].rute = model.app.opposingTeam;
+    viewApp();
+    
   } else {
-    ledigrute.style.backgroundColor = model.app.opposingTeam
+    viewApp();
+    computerMove();
   }
 }
 
@@ -60,10 +60,7 @@ function randomizer(){
     return randomNumber;
 }
 
-function createRandomRute(){
-  let randomrute = document.getElementById(`rute${randomizer()}`)
-  return randomrute;
-}
+
 
  
 

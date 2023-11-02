@@ -50,6 +50,7 @@ function gameView(){
     <div class='grid'>${gridMaker()}</div>
     <br>
     <button onclick='resetGame()'>Reset</button>
+    <button onclick='viewApp()'>viewapp</button>
     `;
     return html
 }
