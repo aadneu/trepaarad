@@ -38,7 +38,8 @@ function gridMaker() {
 function velgRute(index){
   if(model.app.gameBoard[index].rute === '')   
   model.app.gameBoard[index].rute = model.app.currentTeam;
-  computerMove()
+  computerMove();
+  
   viewApp();
 }
 
@@ -55,15 +56,10 @@ function computerMove(){
 }
 
 function checkWinner(){
-  let gridNr = model.app.gameboard
-  if (gridNr[0].rute === gridNr[1].rute && gridNr[2].rute === gridNr[1].rute){
-    console.log('tre på rad')
-
-  }
 }
 
 function randomizer(){
-   let randomNumber = Math.floor(Math.random() * (9 - 1 + 1 )) + 1
+   let randomNumber = Math.floor(Math.random() * 9 )
     return randomNumber;
 }
 
