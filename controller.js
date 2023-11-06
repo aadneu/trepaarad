@@ -50,8 +50,15 @@ function computerMove(){
     viewApp();
     
   } else {
-    viewApp();
     computerMove();
+  }
+}
+
+function checkWinner(){
+  let gridNr = model.app.gameboard
+  if (gridNr[0].rute === gridNr[1].rute && gridNr[2].rute === gridNr[1].rute){
+    console.log('tre på rad')
+
   }
 }
 
