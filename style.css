@@ -1,6 +1,7 @@
 .grid {
     display: grid;
     grid-template-columns: auto auto auto;
+    
     height: 400px;
     width: 400px;
 }
@@ -15,4 +16,7 @@
     justify-content: space-evenly;
 }
 
-
+img{
+    height: 200px;
+    width: 200px;
+}
