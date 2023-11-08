@@ -7,12 +7,18 @@
 
 .box{
     border: 1px solid black;
-    cursor:pointer
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    
 }
 .spillebrett{
     display: flex;
     padding: 1%;    
     justify-content: space-evenly;
 }
-
+img{
+    height: 350px;
+    width: 350px;
+}
 
