@@ -57,11 +57,13 @@ function computerMove() {
 }
 
 function winScreen(){
-  if(model.app.opponentScore === 5){
-    model.app.currentView = 'gameoverscreen'
-  } else if (model.app.myScore === 5){
-    model.app.currentView = 'winscreen'
+  if(model.app.opponentScore > 5){
+    changeView('gameoverscreen')
+  } else if (model.app.myScore > 5){
+    changeView('winscreen')
+   
   }
+  
 }
 
 function reloadGrid(){

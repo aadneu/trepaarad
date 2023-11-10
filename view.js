@@ -23,6 +23,10 @@ function pageView(){
         html += selectPlayerScreen();
     } else if (model.app.currentView == 'ingamescreen') {
         html += gameView();
+    } else if (model.app.currentView == 'winscreen') {
+        html += winView();
+    } else if (model.app.currentView == 'gameoverscreen') {
+        html += loseView();
     }
     return html
 }
@@ -52,6 +56,19 @@ function gameView(){
     <br>
     <button onclick='resetGame()'>Reset</button>
     <button onclick='viewApp()'>viewapp</button>
+    `;
+    
+    return html
+}
+function winView(){
+    let html = /*html*/`
+    <h1>DU VANT</h1>
+    `;
+    return html
+}
+function loseView(){
+    let html = /*html*/`
+    <h1>DU TAPTE</h1>
     `;
     return html
 }
