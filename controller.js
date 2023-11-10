@@ -19,15 +19,15 @@ function selectTeam(value, ) {
 
   if (model.app.currentTeam != "") {
     model.app.hasChosenTeam = true;
+  } model.app.teams
+  if(model.app.currentTeam === model.app.teams[0]){
+    model.app.opposingTeam =model.app.teams[1]
+  } else if (model.app.currentTeam === model.app.teams[1]){
+    model.app.opposingTeam = model.app.teams[0]
   }
-  if(model.app.currentTeam === 'Red'){
-    model.app.opposingTeam = 'Blue'
-  } else if (model.app.currentTeam === 'Blue'){
-    model.app.opposingTeam = 'Red'
-  }
-  
-  viewApp();
+    viewApp();
 }
+
 function gridMaker() {
   let grid = "";
   for (let i = 0; i < model.app.gameBoard.length; i++) {
