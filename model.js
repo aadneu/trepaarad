@@ -16,7 +16,7 @@ model = {
         myScore: 0,
         opponentScore: 0,
         // teams:['<img src="img/bwsmush.png">','<img src="img/toad.png">'],
-        teams:['asdf', 'zxcv'],
+        teams:['Blue', 'Red'],
         hasChosenTeam: false,
         displaymessage: '',
         gameBoard: [

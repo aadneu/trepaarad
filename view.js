@@ -14,6 +14,7 @@ function viewApp(){
     
     `;
     app.innerHTML = html
+    
 }
 
 function pageView(){
